@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Platform</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <div id="search">
+        <input type="text" id="searchBar" placeholder="Search Movies...">
+        <select id="genreFilter">
+            <option value="">Select Genre</option>
+            <option value="Action">Action</option>
+            <option value="Drama">Drama</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+        </select>
+        <select id="ratingSort">
+            <option value="">Sort by Rating</option>
+            <option value="desc">Highest to Lowest</option>
+            <option value="asc">Lowest to Highest</option>
+        </select>
+        <button onclick="loadMovies()">Load Movies</button>
+    </div>
+
+    <div id="movieGrid"></div>
+
+    <div id="movieModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h2 id="movieTitle"></h2>
+            <p id="movieDescription"></p>
+            <p><strong>Rating:</strong> <span id="movieRating"></span></p>
+            <p><strong>Release Date:</strong> <span id="movieReleaseDate"></span></p>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
